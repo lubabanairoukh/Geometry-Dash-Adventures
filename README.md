@@ -37,7 +37,7 @@ This project is an implementation of the game "Geometry Dash Adventures" develop
 
 
 ## Watch the Game
-You can watch a gameplay video of "Save the King" here: https://www.youtube.com/watch?v=BUthIWcyPpI
+You can watch a gameplay video of "Geometry Dash Adventures" here: https://www.youtube.com/watch?v=BUthIWcyPpI
 
 
 ## Known Bugs
