@@ -1,8 +1,15 @@
+<<<<<<< HEAD
+=======
+#
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 #include "Texture.h"
 
 //--------------------------Texture Constructor----------------------------------------
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 Texture::Texture()
 {
 	/*
@@ -21,6 +28,7 @@ void Texture::loadTextures()
 	* save the name of pics of objects in array
 	* save the pic of every static and moving objects
 	*/
+<<<<<<< HEAD
 	
 	sf::Texture m_stat;
 	
@@ -119,6 +127,22 @@ sf::Texture* Texture::getname()
 sf::Texture* Texture::getchose()
 {
 	return &m_chose;
+=======
+	m_ObjectTextures[0].loadFromFile("twoinone.png");
+	m_ObjectTextures[1].loadFromFile("upleftright.png");
+	m_ObjectTextures[2].loadFromFile("downleftright.png");
+	//m_winbackground.loadFromFile
+
+
+	m_gameOverBackGround.loadFromFile("34fmPl.jpg");
+	m_winbackground.loadFromFile("Level+Up.jpg");
+
+	m_font.loadFromFile("FREESCPT.TTF");
+	for (int i = 0; i < MUSICONOFF; i++)
+	{
+		m_MusicTextures[i].loadFromFile(m_MusicName[i]);
+	}
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 }
 
 
@@ -137,6 +161,7 @@ Texture& Texture::instance()
 	return texture;
 }
 
+<<<<<<< HEAD
 sf::Texture* Texture::getPracticeModeIcon()
 {
 	return &m_practiceMode;
@@ -145,6 +170,15 @@ sf::Texture* Texture::getModeType()
 {
 	return &m_modeType;
 }
+=======
+
+
+sf::Texture* Texture::getCate(int index)
+{
+	return &m_ObjectTextures[index];
+}
+
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 //-----------------------------------------------------------------------------------------------
 sf::Font* Texture::getFont()
 {
@@ -152,13 +186,18 @@ sf::Font* Texture::getFont()
 }
 
 
+<<<<<<< HEAD
 sf::Texture* Texture::getGameBackGround(BackgroundColor color)
+=======
+sf::Texture* Texture::getAboutTheGame()
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 {
 
 	/*
 	*
 	*return an specific texture of music
 	*
+<<<<<<< HEAD
 	* */
 
 	return &m_gameBackGround[(int)color];
@@ -256,3 +295,32 @@ sf::Texture* Texture::getBackgroundPuase()
 {
 	return &m_backgroundpause;
 }
+=======
+	*/
+
+	return &m_abouttheGame;
+}
+
+sf::Texture* Texture::getGameWinBackGround()
+{
+	return &m_winbackground;
+}
+
+
+sf::Texture* Texture::getMusicTexture(int symbol)
+{
+
+	/*
+	*
+	*return an specific texture of music
+	*
+	*/
+
+	return &m_MusicTextures[symbol];
+}
+
+sf::Texture* Texture::getGameOverBackGround()
+{
+	return &m_gameOverBackGround;
+}
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9

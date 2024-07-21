@@ -3,21 +3,33 @@
 
 MenuGame::MenuGame()
 {
+<<<<<<< HEAD
 
 }
 
 void MenuGame::menurun(sf::RenderWindow& window, std::string& level)
+=======
+    
+}
+
+void MenuGame::menurun(sf::RenderWindow& window)
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 {
 
     /*
     *
+<<<<<<< HEAD
     * upload the text of every three options and set position
+=======
+    * upload the text of every three options and set position 
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
     * run the menu game
     *
     */
 
 
 
+<<<<<<< HEAD
 
     m_aboutheGame.setTexture(*Texture::instance().getAboutTheGame(0));
     m_aboutheGame.setScale(sf::Vector2f((M_WidthWindow / m_aboutheGame.getGlobalBounds().width),
@@ -36,10 +48,18 @@ void MenuGame::menurun(sf::RenderWindow& window, std::string& level)
 
 
     m_background.setTexture(*Texture::instance().getMenuGame());
+=======
+  
+ 
+    sf::Texture tex;
+    tex.loadFromFile("backgroundmenu.jpg");
+    m_background.setTexture(tex);
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
     m_background.setScale(sf::Vector2f((M_WidthWindow / m_background.getGlobalBounds().width),
         (M_HieghtWindow / m_background.getGlobalBounds().height)));
 
 
+<<<<<<< HEAD
     m_chose.setTexture(*Texture::instance().getchose());
     m_chose.setScale(sf::Vector2f((M_WidthWindow / m_chose.getGlobalBounds().width),
         (M_HieghtWindow / m_chose.getGlobalBounds().height)));
@@ -107,6 +127,46 @@ void MenuGame::run(sf::RenderWindow& window, std::string& level)
     
 
     Music::instance().PlayMusic("Menu.ogg");
+=======
+
+    for (int i = 0; i < MENUSTART; i++)
+    {
+
+        setTextInfo(m_menu[i]);
+        m_menu[i].setCharacterSize(70); 
+        m_menu[i].setOutlineColor(sf::Color::Red);
+    }
+
+    m_menu[0].setString("Start The Game");
+    m_menu[0].setPosition(sf::Vector2f(
+        550,250));
+
+
+  
+
+    m_menu[1].setString("Exit The Game");
+    m_menu[1].setPosition(sf::Vector2f(
+        550,450));
+
+   
+   
+
+
+    run(window);
+}
+
+void MenuGame::run(sf::RenderWindow& window)
+{
+
+    /*
+    * 
+    * run the menu game
+    * 
+    * 
+    */
+
+
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
     while (window.isOpen())
     {
         window.clear();
@@ -125,11 +185,18 @@ void MenuGame::run(sf::RenderWindow& window, std::string& level)
 
             case sf::Event::MouseMoved:
 
+<<<<<<< HEAD
 
+=======
+                for (int i = 0; i < MENUSTART; i++)
+                    setColorText(window, m_menu[i], window.mapPixelToCoords
+                    ({ event.mouseButton.x, event.mouseButton.y }));
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
                 break;
 
 
             case sf::Event::MouseButtonReleased:
+<<<<<<< HEAD
                 if (handleclick(window, m_charecter)) {
                     chosePlayer(window);
                     level = m_level.runthelevel(window);
@@ -150,6 +217,17 @@ void MenuGame::run(sf::RenderWindow& window, std::string& level)
                 if (handleclick(window, m_info))
                     aboutTheGame(window);
 
+=======
+
+                auto location = window.mapPixelToCoords(
+                    { event.mouseButton.x, event.mouseButton.y });
+               
+                if (handleclick(window, m_menu[0]))
+                    return;
+                if (handleclick(window, m_menu[1]))
+                     window.close();
+                
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 
                 break;
             }
@@ -159,6 +237,7 @@ void MenuGame::run(sf::RenderWindow& window, std::string& level)
 
     }
 }
+<<<<<<< HEAD
 void MenuGame::draw(sf::RenderWindow& window)
 {
     /*
@@ -201,6 +280,34 @@ void MenuGame::setTextInfo(sf::Text& text_ic)
     }
 
 }
+=======
+
+
+bool MenuGame:: handleclick(sf::RenderWindow& window, sf::Text rec)
+{
+    /*
+    * 
+    * cheack out if the player click on one of the postion
+    * 
+    */
+
+
+    float mouseX = sf::Mouse::getPosition(window).x;
+    float mouseY = sf::Mouse::getPosition(window).y;
+
+    float btnPosX = rec.getPosition().x;
+    float btnPosY = rec.getPosition().y;
+
+    float btnxPosWidth = rec.getPosition().x + rec.getLocalBounds().width;
+    float btnyPosHeight = rec.getPosition().y + rec.getLocalBounds().height;
+
+    if (mouseX <btnxPosWidth && mouseX>btnPosX && mouseY <btnyPosHeight && mouseY> btnPosY)
+        return true;
+
+    return false;
+}
+
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 
 void MenuGame::setColorText(sf::RenderWindow& window, sf::Text& m_menu1, sf::Vector2f LocationMouseMoved)
 {
@@ -210,11 +317,18 @@ void MenuGame::setColorText(sf::RenderWindow& window, sf::Text& m_menu1, sf::Vec
     * change the colot if the out line depends of the user click there
     * or no
     *
+<<<<<<< HEAD
     * */
 
 
 
     if (handleclick1(window, m_menu1))
+=======
+    */
+
+
+    if (handleclick(window, m_menu1))
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
     {
         m_menu1.setOutlineThickness(8);
 
@@ -230,6 +344,7 @@ void MenuGame::setColorText(sf::RenderWindow& window, sf::Text& m_menu1, sf::Vec
     }
 
 }
+<<<<<<< HEAD
 bool MenuGame::handleclick1(sf::RenderWindow& window, sf::Text rec)
 {
     /*
@@ -374,3 +489,36 @@ void MenuGame::chosePlayer(sf::RenderWindow& window)
 }
 
 
+=======
+
+void MenuGame::setTextInfo(sf::Text& text_ic)
+{
+    text_ic.setFont(*Texture::instance().getFont());
+    text_ic.setStyle(sf::Text::Bold);
+    text_ic.setColor(sf::Color::White);
+    text_ic.setOutlineColor(sf::Color::Black);
+    text_ic.setOutlineThickness(4);
+}
+
+
+void MenuGame::draw(sf::RenderWindow& window)
+{
+    /*
+    * draw the background of the menu game
+    * draw the three option:
+    * start the game 
+    * about the game
+    * exit
+    * draw the music picture 
+    * 
+    */
+
+ 
+    window.draw(m_background);
+    for (int i = 0; i < 2; i++)
+        window.draw(m_menu[i]);
+
+   
+   
+}
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9

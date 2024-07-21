@@ -2,10 +2,14 @@
 #include <array>
 #include <string>
 #include <SFML/Graphics.hpp>
+<<<<<<< HEAD
 #include "Define.h"
 
 
 
+=======
+#include "Macros.h"
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 /*
 *
 * class that save in it all the pics of objects in the game
@@ -16,6 +20,7 @@
 class Texture
 {
 public:
+<<<<<<< HEAD
 	
 
 	
@@ -30,11 +35,14 @@ public:
 
 	void set_player(std::string st);
 
+=======
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 
 	~Texture() = default;
 
 	static Texture& instance();
 
+<<<<<<< HEAD
 	sf::Texture* getMenuGame();
 	sf::Font* getFont();
 	sf::Texture* getAboutTheGame(int index);
@@ -127,4 +135,42 @@ private:
 
 	std::array <std::string, ICONSTATICNUM > m_staticobjectsname;
 	std::array<sf::Texture, ICONSTATICNUM>m_staticobjectstexture;
+=======
+	sf::Texture* getCate(int index);
+	sf::Font* getFont();
+	sf::Texture* getAboutTheGame();
+	sf::Texture* getGameWinBackGround();
+	sf::Texture* getMusicTexture(int symbol);
+	sf::Texture* getGameOverBackGround();
+private:
+	
+	Texture();
+
+	
+	sf::Font m_font;
+
+
+	sf::Texture m_ObjectTextures[3];
+	sf::Texture m_backgrounfgame;
+	sf::Texture m_winbackground;
+	std::string texturesName;
+	std::string m_back;
+	sf::Texture m_abouttheGame;
+	std::array < std::string, MUSICONOFF> m_MusicName;
+	std::array<sf::Texture, MUSICONOFF> m_MusicTextures;
+
+
+
+	
+	
+
+	sf::Texture m_gameBackGround;
+	sf::Texture m_gameOverBackGround;
+	sf::Texture m_gameWinBackGround;
+	
+
+
+	
+	void loadTextures();
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 };

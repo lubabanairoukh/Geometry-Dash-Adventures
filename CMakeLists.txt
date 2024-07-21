@@ -1,6 +1,10 @@
 cmake_minimum_required (VERSION 3.20)
 
+<<<<<<< HEAD
 project (Box2DIntegration)
+=======
+project (SFMLExamples)
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 
 # New CMake versions map C++20 to /std:c++20 instead of c++latest, so <format>
 # and other unstable ABI features aren't supported. Use C++23 for such versions
@@ -12,6 +16,7 @@ endif ()
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
 set (CMAKE_CXX_EXTENSIONS OFF)
 if (MSVC)
+<<<<<<< HEAD
     add_compile_options (/W4 /permissive- /Zc:externConstexpr /Zc:inline /analyze
         /w14242 # 'identifier': conversion from 'type1' to 'type1', possible loss of data
         /w14263 # 'function': member function does not override any base class virtual member function
@@ -54,10 +59,21 @@ add_subdirectory (include)
 add_subdirectory (src)
 add_subdirectory (resources)
 add_subdirectory (external/box2d/src)
+=======
+    add_compile_options (/W4 /permissive- /Zc:externConstexpr /Zc:inline /analyze)
+endif ()
+
+add_executable (${CMAKE_PROJECT_NAME})
+
+add_subdirectory (include)
+add_subdirectory (src)
+add_subdirectory (resources)
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
 
 set (SFML_STATIC_LIBRARIES TRUE)
 set (SFML_DIR "C:/SFML/SFML-2.5.1/lib/cmake/SFML")
 
+<<<<<<< HEAD
 find_package (SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 set_target_properties (sfml-main sfml-system sfml-window sfml-graphics sfml-audio sfml-network PROPERTIES MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE)
@@ -65,3 +81,10 @@ set_target_properties (sfml-main sfml-system sfml-window sfml-graphics sfml-audi
 target_link_libraries (${CMAKE_PROJECT_NAME} sfml-graphics sfml-main sfml-audio)
 target_link_libraries (${CMAKE_PROJECT_NAME} box2d)
 configure_file (C:/SFML/SFML-2.5.1/bin/openal32.dll ${CMAKE_BINARY_DIR} COPYONLY)
+=======
+find_package (SFML 2.5 COMPONENTS graphics REQUIRED)
+
+set_target_properties (sfml-main sfml-system sfml-window sfml-graphics sfml-audio sfml-network PROPERTIES MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE)
+
+target_link_libraries (${CMAKE_PROJECT_NAME} sfml-graphics sfml-main)
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9

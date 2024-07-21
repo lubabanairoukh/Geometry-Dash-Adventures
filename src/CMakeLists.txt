@@ -1,4 +1,5 @@
 ﻿target_sources (${CMAKE_PROJECT_NAME} PRIVATE "main.cpp"
+<<<<<<< HEAD
 											  "GameController.cpp"
 											  "GameObject.cpp"
 											  "StaticObject.cpp"
@@ -20,3 +21,14 @@
 											  "Portal.cpp"
 											  "Trophy.cpp"
 											  "Doublejump.cpp")
+=======
+											  "Controller.cpp"
+											  "Board.cpp"
+											  "Caption.cpp"
+											  "Texture.cpp"
+											  "Cat.cpp"
+											  "Circles.cpp"
+											  "WinGame.cpp"
+											  "MenuGame.cpp"
+											  "GameOver.cpp")
+>>>>>>> 2dec36ab4a5e6cb7221be1257d9c5d2906b155f9
