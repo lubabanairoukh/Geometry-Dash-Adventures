@@ -23,7 +23,6 @@ This project is an implementation of the game "Geometry Dash Adventures" develop
 - **Collision Handling:** Implemented using multi-methods and Box2D for realistic physics interactions.
 - **Singleton Pattern:** Used for managing music and textures efficiently.
 
-Here's a more structured and polished README for your "Geometry Dash Adventures" game project:
 
 ## Usage
 - Use the "Space" button to jump.
@@ -37,6 +36,10 @@ Here's a more structured and polished README for your "Geometry Dash Adventures"
 - Music files for background and level-specific music.
 
 
+## Watch the Game
+You can watch a gameplay video of "Save the King" here: https://www.youtube.com/watch?v=BUthIWcyPpI
+
+
 ## Known Bugs
 - Occasionally, the player may get stuck on stairs (rectangle shape). To resolve this, the player should jump.
 
@@ -47,4 +50,3 @@ The game can be challenging to play. Have fun and good luck!
 
 ## Conclusion
 This project was developed using C++, SFML, and Box2D, employing object-oriented programming principles and design patterns like Singleton and Multi-methods.
-```
